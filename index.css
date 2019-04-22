@@ -168,6 +168,12 @@ hr {
 	display: flex;
 	padding: 15px 0;
 }
+.check-box {
+	position: relative;
+	display: inline-block;
+	width: 56px;
+	height: 28px;
+}
 .check-box input[type="checkbox"] {
 	width: 0;
 	height: 0;
