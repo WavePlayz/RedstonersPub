@@ -168,3 +168,74 @@ hr {
 	display: flex;
 	padding: 15px 0;
 }
+.check-box {
+	position: relative;
+	display: inline-block;
+	width: 80px;
+	height: 40px;
+}
+.check-box input[type="checkbox"] {
+	width: 0;
+	height: 0;
+	opacity: 0;
+}
+.check-box span {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: 20px;
+	background-color: rgba(0,0,0,0.35);
+}
+.check-box span::before {
+	position: absolute;
+	content: "";
+	top: 5px;
+	left: 5px;
+	right: 5px;
+	width: 30px;
+	height: 30px;
+	border-radius: 20px;
+	-webkit-transition: .43s;
+	transition: .43s;
+	animation: unchecked 0.43s ease forwards;
+}
+.check-box input:checked[type="checkbox"] + span::before {
+	animation: checked 0.43s ease forwards;
+}
+@keyframes checked {
+	0% {
+		left: 5px;
+		width: 30px;		
+		background-color: #d7d7d7;
+	}
+	50% {
+		left: 5px;
+		width: 70px;
+		background-color: #017db1;
+	}
+	100% {
+		left: 45px;
+		width: 30px;
+		background-color: #017db1;
+	}
+}
+@keyframes unchecked {
+	0% {
+		left: 45px;
+		width: 30px;
+		background-color: #017db1;
+	}
+	50% {
+		left: 5px;
+		width: 70px;
+		background-color: #d7d7d7;
+	}
+	100% {
+		left: 5px;
+		width: 30px;
+		background-color: #d7d7d7;
+	}
+}
