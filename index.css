@@ -193,20 +193,14 @@ hr {
 .check-box span::before {
 	content: "";
 	position: absolute;
-	content: "";
-	top: 4px;
+	/*top: 4px;
 	left: 4px;
-	right: 32px;
-	/*width: 20px;*/
+	right: 32px;*/
 	height: 20px;
 	border-radius: 20px;
 	animation: unchecked 0.43s ease forwards;
 }
 .check-box input:checked[type="checkbox"] + span::before {
-	left: 32px;
-	right: 4px;
-	/*width: 20px;*/
-	background-color: #017db1;
 	animation: checked 0.43s ease forwards;
 }
 @keyframes checked {
