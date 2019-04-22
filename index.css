@@ -172,8 +172,8 @@ hr {
 .check-box {
 	position: relative;
 	display: inline-block;
-	width: 40px;
-	height: 20px;
+	width: 56px;
+	height: 28px;
 }
 .check-box input[type="checkbox"] {
 	width: 0;
@@ -193,11 +193,11 @@ hr {
 .check-box span::before {
 	position: absolute;
 	content: "";
-	top: 2px;
-	left: 2px;
-	right: 2px;
-	width: 16px;
-	height: 16px;
+	top: 4px;
+	left: 4px;
+	right: 4px;
+	width: 20px;
+	height: 20px;
 	border-radius: 20px;
 	-webkit-transition: .43s;
 	transition: .43s;
@@ -208,35 +208,35 @@ hr {
 }
 @keyframes checked {
 	0% {
-		left: 2px;
-		width: 16px;		
+		left: 4px;
+		width: 20px;		
 		background-color: #d7d7d7;
 	}
 	50% {
-		left: 2px;
-		width: 35px;
+		left: 4px;
+		width: 50px;
 		background-color: #017db1;
 	}
 	100% {
-		left: 22px;
+		left: 32px;
 		width: 16px;
 		background-color: #017db1;
 	}
 }
 @keyframes unchecked {
 	0% {
-		left: 22px;
-		width: 16px;
+		left: 32px;
+		width: 20px;
 		background-color: #017db1;
 	}
 	50% {
-		left: 2px;
-		width: 35px;
+		left: 4px;
+		width: 50px;
 		background-color: #d7d7d7;
 	}
 	100% {
-		left: 2px;
-		width: 16px;
+		left: 4px;
+		width: 20px;
 		background-color: #d7d7d7;
 	}
 }
