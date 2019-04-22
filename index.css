@@ -204,7 +204,7 @@ hr {
 	animation: unchecked 0.43s ease forwards;
 }
 .check-box input:checked[type="checkbox"] + span::before {
-	left: 32px;
+	left: 30px;
 	right: 4px;
 	width: 20px;
 	background-color: #017db1;
@@ -222,14 +222,14 @@ hr {
 		background-color: #017db1;
 	}
 	100% {
-		left: 32px;
+		left: 30px;
 		width: 16px;
 		background-color: #017db1;
 	}
 }
 @keyframes unchecked {
 	0% {
-		left: 32px;
+		left: 30px;
 		width: 20px;
 		background-color: #017db1;
 	}
