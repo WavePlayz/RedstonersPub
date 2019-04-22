@@ -52,7 +52,7 @@
 
 		<!-- Pre Loader -->
 
-		<div style="width: 100%; height: 100%; z-index: -3999; background-color: #242729; position: fixed; left: 0; top: 0" id="preLoader">
+		<div style="width: 100%; height: 100%; z-index: 3999; background-color: #242729; position: fixed; left: 0; top: 0" id="preLoader">
 			<div class="cube-grid">
 				<div class="cube cube1"></div>
 				<div class="cube cube2"></div>
@@ -601,7 +601,7 @@
 
 	<!-- Optional JavaScript -->
 
-		<!-- <script>
+		<script>
 			window.addEventListener('load', () => {
 				document.getElementById('preLoader').style.display = "none";
 				window.scrollTo(0,0);
@@ -614,7 +614,7 @@
 					document.body.classList.add('scroll-hide');
 				}
 			});
-		</script> -->
+		</script>
 		<script>
 			window.addEventListener('scroll', () => {
 				var nav = document.getElementById('myNav');
