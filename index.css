@@ -193,11 +193,11 @@ hr {
 .check-box span::before {
 	position: absolute;
 	content: "";
-	top: 5px;
-	left: 5px;
-	right: 5px;
-	width: 30px;
-	height: 30px;
+	top: 2px;
+	left: 2px;
+	right: 2px;
+	width: 16px;
+	height: 16px;
 	border-radius: 20px;
 	-webkit-transition: .43s;
 	transition: .43s;
@@ -208,35 +208,35 @@ hr {
 }
 @keyframes checked {
 	0% {
-		left: 5px;
-		width: 30px;		
+		left: 2px;
+		width: 16px;		
 		background-color: #d7d7d7;
 	}
 	50% {
-		left: 5px;
-		width: 70px;
+		left: 2px;
+		width: 30px;
 		background-color: #017db1;
 	}
 	100% {
-		left: 45px;
-		width: 30px;
+		left: 22px;
+		width: 16px;
 		background-color: #017db1;
 	}
 }
 @keyframes unchecked {
 	0% {
-		left: 45px;
-		width: 30px;
+		left: 22px;
+		width: 16px;
 		background-color: #017db1;
 	}
 	50% {
-		left: 5px;
-		width: 70px;
+		left: 2px;
+		width: 30px;
 		background-color: #d7d7d7;
 	}
 	100% {
-		left: 5px;
-		width: 30px;
+		left: 2px;
+		width: 16px;
 		background-color: #d7d7d7;
 	}
 }
