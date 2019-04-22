@@ -191,6 +191,7 @@ hr {
 	background-color: rgba(0,0,0,0.35);
 }
 .check-box span::before {
+	content: "";
 	position: absolute;
 	content: "";
 	top: 4px;
