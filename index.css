@@ -102,7 +102,7 @@ hr {
 	opacity: 1;
 }
 .discord-logo-hover {transition: 0.34s ease;}
-.discord-logo-hover + hr {transition: 0.34s ease;}
+.discord-logo-hover + hr {transition: 0.13s;}
 .discord-logo-hover:hover + hr {opacity: 0.7; width: 50%}
 .discord-logo-hover:hover {
 	opacity: 1 !important;
@@ -113,6 +113,7 @@ hr {
 /* Players Skin Head Layout */
 
 .player-skin-head {
+	position: relative;
 	height: 35px;
 	width: 35px;
 	background: #2c2f32;
@@ -121,10 +122,31 @@ hr {
 	vertical-align: middle;
 	margin-right: 0.60rem;
 }
+.player-skin-head i {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	display: inline-block;
+	z-index: 1;
+	position: absolute;
+	font-size: 12.8px;
+	color: #a2a2a2;
+	transition: 0.13s;
+}
+.card-header:hover .player-skin-head img {
+	transform: scale(1.1);
+	border-radius: 0;
+}
+.player-skin-head:hover i {
+	color: #d7d7d7;
+}
 .player-skin-head img{
+	position: absolute;
 	height: 35px;
 	width: 35px;
 	border-radius: 4px;
+	z-index: 2;
+	transition: 0.3s;
 }
 
 /* Scroll bar hide */
