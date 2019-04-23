@@ -101,6 +101,14 @@ hr {
 .nav-bg-blue:hover a {
 	opacity: 1;
 }
+.discord-logo-hover {transition: 0.34s ease;}
+.discord-logo-hover + hr {transition: 0.34s ease;}
+.discord-logo-hover:hover + hr {opacity: 0.7; width: 50%}
+.discord-logo-hover:hover {
+	opacity: 1 !important;
+	color: white;
+	filter: drop-shadow(0 0 6px rgba(0,0,0,0.3));
+}
 
 /* Players Skin Head Layout */
 
