@@ -243,6 +243,8 @@ function makePost(iconurl, name, author, color, content, attachments, msg) {
 				attachments.forEach(url => {
 					let isVideo = url.endsWith(".mp4")
 					let img = document.createElement(isVideo ? "video" : 'img')
+					addClasses(["mv-1", "rounded"], img)
+					
 					
 					if (isVideo){
 						img.style.maxWidth = "100%";
