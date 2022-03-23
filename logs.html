@@ -219,6 +219,8 @@ function makePost(iconurl, author, color, content, attachments) {
 				addClasses( ["btn-group","btn-group-sm"], buttons )
 				buttons.setAttribute("role", "group")
 				
+				let links = content.match(/https:\/\/.*/g)
+				
 				links?.forEach( link => {
 					let a = document.createElement('a')
 					addClasses(["btn", "text-white", "dark-hover"], a)
