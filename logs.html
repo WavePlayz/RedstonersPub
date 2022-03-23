@@ -121,7 +121,7 @@
 	<!-- Optional JavaScript -->
 		
 		<script>
-function makePost(iconurl, author, color, content, attachments) {
+function makePost(iconurl, name, author, color, content, attachments) {
 	function addClasses(cs, e) {
 		cs.forEach(
 			c => e.classList.add( c )
@@ -185,7 +185,7 @@ function makePost(iconurl, author, color, content, attachments) {
 					badge
 				)
 				badge.style.background = "#3f4347"
-				badge.innerHTML = author
+				//badge.innerHTML = author
 				
 				header .appendChild( badge )
 				
@@ -196,7 +196,24 @@ function makePost(iconurl, author, color, content, attachments) {
 				body
 			)
 			card .appendChild( body )
-			
+				
+				
+				let title = document.createElement('h4')
+				title.innerHTML = name
+				addClasses(
+					["card-title" ],
+					title
+				)
+				
+				
+				let subtitle = document.createElement('h4')
+				subtitle.innerHTML = author
+				addClasses(
+					["card-subtitle", "mb-2", "text-muted" ],
+					title
+				)
+				
+				
 				let para = document.createElement('p')
 				addClasses(
 					["card-text", "scroll-hide" ],
@@ -251,6 +268,7 @@ function makePost(iconurl, author, color, content, attachments) {
 					json.messages.forEach(m => {
 						posts.appendChild( makePost(
 							m.author.avatar.url ?? m.author.default_avatar_url.url ?? "None", 
+							m.author.username
 							m.author.name,
 							m.author.color,
 							m.content,
