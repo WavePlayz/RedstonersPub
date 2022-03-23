@@ -211,7 +211,9 @@ function makePost(iconurl, author, content) {
 }
 
 			let posts = document.getElementById("posts")
-
+			
+			const getUrl x => x.match(/url='(.*)'/)[1];
+			
 			let url = "https://raw.githubusercontent.com/WavePlayz/RedstonersPub/master/door_data/logs.json"
 			fetch(url)
 				.then(function(response) {
@@ -220,7 +222,7 @@ function makePost(iconurl, author, content) {
 				.then(function(json) {
 					// do something with jsonResponse
 					json.messages.forEach(m => {
-						posts.appendChild( makePost( "", m.author.name, m.content ) )
+						posts.appendChild( makePost( m.author.avatar.url, m.author.name, m.content ) )
 					})
 					
 				});
