@@ -300,7 +300,7 @@ function makePost(iconurl, name, author, color, content, attachments, msg) {
 msg.pop()
 
 const urlParams = new URLSearchParams(window.location.search)
-let start = +urlParams.get('page') ?? 0
+let start = Number(urlParams.get('page')) ?? 0
 
 let ps = msg.reverse().splice(start, 10)
 
