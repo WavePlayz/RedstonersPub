@@ -299,10 +299,22 @@ function makePost(iconurl, name, author, color, content, attachments, msg) {
 					let msg = json.messages
 msg.pop()
 
-const urlParams = new URLSearchParams(window.location.search)
-let start = Number(urlParams.get('page')) ?? 0
+let tot = msg.reverse()
+let pages = Math.floor( tot/max )
 
-let ps = msg.reverse().splice(start, 10)
+const urlParams = new URLSearchParams(window.location.search)
+let page = Number(urlParams.get('page')) < 1 ?? 1
+let max = 10
+
+let paging = document.createElement('small')
+addClasses(["text-muted"], paging)
+paging.innerHTML = `${tot.length} POSTS | SHOWING ${max} POSTS FROM ${page} PAGE of ${pages} PAGES`
+document.body.appendChild( paging )
+
+
+
+let ps = tot.splice(page-1, max)
+
 
 
 ps.forEach(m => {
