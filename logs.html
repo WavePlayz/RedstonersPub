@@ -310,7 +310,7 @@ let pages = Math.floor( tot.length/max )
 let paging = document.createElement('small')
 addClasses(["text-muted", "text-center"], paging)
 paging.style.fontFamily = "unibold"
-paging.style.opacity = "0.9"
+paging.style.opacity = 0.9
 
 paging.innerHTML = `${tot.length} POSTS | SHOWING ${max} POSTS FROM ${page+1} PAGE of ${pages} PAGES`
 document.getElementById("titles").appendChild( paging )
