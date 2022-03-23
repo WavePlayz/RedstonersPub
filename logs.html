@@ -222,6 +222,13 @@ function makePost(iconurl, name, author, color, content, attachments) {
 				)
 				//para.style.height = "73px"
 				
+				let links = content.match(/https:\/\/.*/g)
+				
+				links.forEach(link => {
+					content = content.replaceAll(link, "") 
+
+				})
+				
 				
 				para.appendChild( document.createTextNode( content ) )
 				
@@ -238,7 +245,7 @@ function makePost(iconurl, name, author, color, content, attachments) {
 				addClasses( ["btn-group","btn-group-sm"], buttons )
 				buttons.setAttribute("role", "group")
 				
-				let links = content.match(/https:\/\/.*/g)
+				
 				
 				links?.forEach( link => {
 					let a = document.createElement('a')
