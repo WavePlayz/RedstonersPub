@@ -302,7 +302,7 @@ msg.pop()
 const urlParams = new URLSearchParams(window.location.search)
 let start = +urlParams.get('product') ?? 0
 
-let ps = msg.reverse().splice(start, 20)
+let ps = msg.reverse().splice(start, 10)
 
 
 ps.forEach(m => {
