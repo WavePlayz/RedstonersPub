@@ -302,18 +302,18 @@ msg.pop()
 let tot = msg.reverse()
 
 const urlParams = new URLSearchParams(window.location.search)
-let page = Number(urlParams.get('page')) < 1 ?? 1
+let page = Number(urlParams.get('page')) ?? 0
 
 let max = 15
 let pages = Math.floor( tot/max )
 
 let paging = document.createElement('h6')
 addClasses(["text-muted"], paging)
-paging.innerHTML = `${tot.length} POSTS | SHOWING ${max} POSTS FROM ${page} PAGE of ${pages} PAGES`
+paging.innerHTML = `${tot.length} POSTS | SHOWING ${max} POSTS FROM ${page+1} PAGE of ${pages} PAGES`
 posts.appendChild( paging )
 
 
-let ps = tot.splice(page-1, max)
+let ps = tot.splice(page, max)
 
 
 
