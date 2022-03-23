@@ -204,7 +204,6 @@ function makePost(iconurl, author, color, content, attachments) {
 				)
 				//para.style.height = "73px"
 				
-				let links = content.match(/https:\/\/.*/g)
 				
 				para.appendChild( document.createTextNode( content ) )
 				
@@ -218,12 +217,17 @@ function makePost(iconurl, author, color, content, attachments) {
 				
 				let buttons = document.createElement('div')
 				addClasses( ["btn-group","btn-group-sm"], buttons )
+				buttons.setAttribute("role", "group")
 				
 				links?.forEach( link => {
 					let a = document.createElement('a')
 					a.href = link
-					a.innerContent = link.match(/\w+.(\w+).\w+/)[1]
+					a.innerContent = link.match(/https:\/\/(?:\w*\.)?(\w+)\.\w+/)[1]
+					
+					buttons.appendChild(a)
 				})
+				
+				body .appendChild( buttons )
 				
 				
 				
