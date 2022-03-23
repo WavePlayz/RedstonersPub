@@ -310,7 +310,7 @@ let pages = Math.floor( tot/max )
 let paging = document.createElement('h6')
 addClasses(["text-muted"], paging)
 paging.innerHTML = `${tot.length} POSTS | SHOWING ${max} POSTS FROM ${page} PAGE of ${pages} PAGES`
-document.body.appendChild( paging )
+posts.appendChild( paging )
 
 
 let ps = tot.splice(page-1, max)
