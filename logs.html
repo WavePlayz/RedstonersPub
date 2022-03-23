@@ -200,7 +200,7 @@ function makePost(iconurl, name, author, color, content, attachments, msg) {
 				
 				let title = document.createElement('h4')
 				title.innerHTML = name
-				title.style.color = "cyan"
+				title.style.color = "#017db1"
 				addClasses(
 					["card-title" ],
 					title
@@ -297,7 +297,8 @@ function makePost(iconurl, name, author, color, content, attachments, msg) {
 							m.author.name,
 							m.author.color,
 							m.content,
-							m.attachments.map( v => getUrl(v.url) )
+							m.attachments.map( v => getUrl(v.url) ),
+							m
 							) )
 					})
 					
