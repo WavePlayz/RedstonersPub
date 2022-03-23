@@ -269,14 +269,14 @@ function makePost(iconurl, name, author, color, content, attachments, msg) {
 				addClasses(["text-muted"], posted)
 				
 				posted.innerHTML = "Posted at: " + msg.created_at.split(".")[0]
-				msg.created_at && footer .appendChild( posted )
+				msg.created_at != "None" && footer .appendChild( posted )
 				
 				footer .appendChild( document.createElement('br') )
 				
 				let editted = document.createElement('small')
 				addClasses(["text-muted"], editted)
 				editted.innerHTML = "Editted at: " + msg.edited_at.split(".")[0]
-				msg.edited_at && footer .appendChild( editted )
+				msg.edited_at != "None" && footer .appendChild( editted )
 				
 				
 	return post
