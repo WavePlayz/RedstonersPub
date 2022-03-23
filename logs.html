@@ -228,6 +228,7 @@ function makePost(iconurl, name, author, color, content, attachments) {
 				
 				attachments.forEach(url => {
 					let img = document.createElement('img')
+					addClasses(  [ "card-img-bottom" ], img  )
 					img.src = url
 					body .appendChild( img )
 				})
