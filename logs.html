@@ -224,7 +224,7 @@ function makePost(iconurl, author, color, content, attachments) {
 				links?.forEach( link => {
 					let a = document.createElement('a')
 					addClasses(["btn", "text-white", "dark-hover"], a)
-					a.href = link
+					a.href = link.toUpperCase()
 					a.innerText = link.match(/https:\/\/(?:\w*\.)?(\w+)\.\w+/)[1]
 					
 					buttons.appendChild(a)
