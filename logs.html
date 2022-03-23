@@ -225,7 +225,7 @@ function makePost(iconurl, author, color, content, attachments) {
 					let a = document.createElement('a')
 					addClasses(["btn", "text-white", "dark-hover"], a)
 					a.href = link
-					a.innerHTML = link.match(/https:\/\/(?:\w*\.)?(\w+)\.\w+/)[1]
+					a.innerText = link.match(/https:\/\/(?:\w*\.)?(\w+)\.\w+/)[1]
 					
 					buttons.appendChild(a)
 				})
