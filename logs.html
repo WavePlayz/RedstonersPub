@@ -224,7 +224,7 @@ function makePost(iconurl, name, author, color, content, attachments) {
 				
 				let links = content.match(/https:\/\/.*/g)
 				
-				links.forEach(link => {
+				links?.forEach(link => {
 					content = content.replaceAll(link, "") 
 
 				})
