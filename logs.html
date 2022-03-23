@@ -305,7 +305,7 @@ const urlParams = new URLSearchParams(window.location.search)
 let page = Number(urlParams.get('page')) ?? 0
 
 let max = 15
-let pages = Math.floor( tot/max )
+let pages = Math.floor( tot.length/max )
 
 let paging = document.createElement('h6')
 addClasses(["text-muted"], paging)
