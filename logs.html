@@ -121,7 +121,7 @@
 	<!-- Optional JavaScript -->
 		
 		<script>
-function makePost(iconurl, author, content) {
+function makePost(iconurl, author, content, attachments) {
 	function addClasses(cs, e) {
 		cs.forEach(
 			c => e.classList.add( c )
@@ -219,7 +219,7 @@ function makePost(iconurl, author, content) {
 
 			let posts = document.getElementById("posts")
 			
-			const getUrl x => x.match(/url='(.*)'/)[1];
+			const getUrl = x => x.match(/url='(.*)'/)[1];
 			
 			let url = "https://raw.githubusercontent.com/WavePlayz/RedstonersPub/master/door_data/logs.json"
 			fetch(url)
