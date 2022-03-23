@@ -307,7 +307,7 @@ let page = Number(urlParams.get('page')) < 1 ?? 1
 let max = 15
 let pages = Math.floor( tot/max )
 
-let paging = document.createElement('small')
+let paging = document.createElement('div')
 addClasses(["text-muted"], paging)
 paging.innerHTML = `${tot.length} POSTS | SHOWING ${max} POSTS FROM ${page} PAGE of ${pages} PAGES`
 document.body.appendChild( paging )
