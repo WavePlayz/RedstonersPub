@@ -229,7 +229,7 @@ function makePost(iconurl, name, author, color, content, attachments, msg) {
 
 				})
 				
-				content = content.replace(/\w+x\w+x\w+=\w+/, "<bold>$&</bold>")
+				content = content.replace(/\w+x\w+x\w+=\w+/, "$&")
 				
 				
 				para.appendChild( document.createTextNode( content ) )
@@ -265,10 +265,12 @@ function makePost(iconurl, name, author, color, content, attachments, msg) {
 			addClasses(["card-footer"], footer)
 			card .appendChild( footer )
 			
-				let posted = document.createElement('small')
+				let posted = document.createElement('bold')
 				addClasses(["text-muted"], posted)
 				posted.innerHTML = "Posted at: " + msg.created_at
 				msg.created_at && footer .appendChild( posted )
+				
+				footer .appendChild( document.createElement('br') )
 				
 				let editted = document.createElement('small')
 				addClasses(["text-muted"], editted)
