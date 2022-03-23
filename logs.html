@@ -121,7 +121,7 @@
 	<!-- Optional JavaScript -->
 		
 		<script>
-function makePost(iconurl, author, content, attachments) {
+function makePost(iconurl, author, color, content, attachments) {
 	function addClasses(cs, e) {
 		cs.forEach(
 			c => e.classList.add( c )
@@ -142,8 +142,8 @@ function makePost(iconurl, author, content, attachments) {
 	
 	
 		let card = document.createElement('div')
-		card.style.background = "#363a3d;"
-		card.style.borderLeft = "3.5px solid #017db1"
+		card.style.background = "#363a3d"
+		card.style.borderLeft = "3.5px solid " + color
 		addClasses(
 			["card", "text-white" ],
 			card
@@ -244,7 +244,8 @@ function makePost(iconurl, author, content, attachments) {
 					json.messages.forEach(m => {
 						posts.appendChild( makePost(
 							m.author.avatar.url ?? m.author.default_avatar_url.url ?? "None", 
-							m.author.name, 
+							m.author.name,
+							m.author.color,
 							m.content,
 							m.attachments.map( v => getUrl(v.url) )
 							) )
