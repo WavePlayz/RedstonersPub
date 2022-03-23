@@ -82,6 +82,12 @@
 			</h2>
 		</div>
 		
+		<div class="container mt-5">
+			<div class="row" id="posts">
+				
+			</div>
+		</div>
+		
 		<!-- Footer -->
 		<footer style="background-color: #1c1e1f; padding-top: 45px;">
 			<div class="container">
@@ -113,14 +119,115 @@
 <!-- JavaScript -->
 
 	<!-- Optional JavaScript -->
-		<script type="module" src="https://raw.githubusercontent.com/WavePlayz/RedstonersPub/master/door_data/logs.js">
-			
-		</script>
 		
 		<script>
+function makePost(iconurl, author, content) {
+	function addClasses(cs, e) {
+		cs.forEach(
+			c => e.classList.add( c )
+		)
+	}
+	
+	
+	
+	let post = document.createElement('div')
+	post.style.paddingTop = "15px"
+	post.style.paddingBottom = "15px"
+	addClasses(
+		["col-sm-12", "col-md-6", "col-lg-4"], 
+		post
+	)
+	
+	
+	
+	
+		let card = document.createElement('div')
+		card.style.background = "#363a3d; border-left: 3.5px solid #017db1"
+		addClasses(
+			["card", "text-white" ],
+			card
+		)
+		post.appendChild(card)
+		
+		
+		
+			let header = document.createElement('div')
+			addClasses(
+				["card-header" ],
+				header
+			)
+			card .appendChild( header )
+			
+			
+				let icon = document.createElement('div')
+				addClasses(
+					["player-skin-head" ],
+					icon
+				)
+				
+				header .appendChild( icon )
+				
+					let iconi = document.createElement('i')
+					addClasses(
+						["fas", "fa-user" ],
+						iconi
+					)
+					icon .appendChild( iconi )
+					
+					let iconImage = document.createElement('img')
+					iconImage.src = iconurl
+					icon .appendChild( iconImage )
+					
+				let badge = document.createElement('i')
+				addClasses(
+					["badge" ],
+					badge
+				)
+				badge.style.background = "#3f4347"
+				badge.innerHTML = author
+				
+				header .appendChild( badge )
+				
+				
+			let body = document.createElement('div')
+			addClasses(
+				["card-body" ],
+				body
+			)
+			card .appendChild( body )
+			
+				let para = document.createElement('p')
+				addClasses(
+					["card-text", "scroll-hide" ],
+					para
+				)
+				//para.style.height = "73px"
+				
+				para.appendChild( document.createTextNode( content ) )
+				
+				body .appendChild( para )
+				
+	return post
+}
+
+			let posts = document.getElementById("posts")
+
+			let url = "https://raw.githubusercontent.com/WavePlayz/RedstonersPub/master/door_data/logs.json"
+			fetch(url)
+				.then(function(response) {
+					return response.json();
+				})
+				.then(function(json) {
+					// do something with jsonResponse
+					json.messages.forEach(m => {
+						posts.appendChild( makePost( "", m.author.name, m.content ) )
+					})
+					
+				});
+			
 			console.log('yes')
 			
-			document.write(logs)
+			document.write(LOGS_DATA)
 			
 		</script>
 		
