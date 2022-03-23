@@ -204,7 +204,7 @@ function makePost(iconurl, name, author, color, content, attachments) {
 					["card-title" ],
 					title
 				)
-				
+				body .appendChild( title )
 				
 				let subtitle = document.createElement('h4')
 				subtitle.innerHTML = author
@@ -212,7 +212,7 @@ function makePost(iconurl, name, author, color, content, attachments) {
 					["card-subtitle", "mb-2", "text-muted" ],
 					title
 				)
-				
+				body .appendChild( subtitle )
 				
 				let para = document.createElement('p')
 				addClasses(
@@ -241,8 +241,8 @@ function makePost(iconurl, name, author, color, content, attachments) {
 				links?.forEach( link => {
 					let a = document.createElement('a')
 					addClasses(["btn", "text-white", "dark-hover"], a)
-					a.href = link.toUpperCase()
-					a.innerText = link.match(/https:\/\/(?:\w*\.)?(\w+)\.\w+/)[1]
+					a.href = link
+					a.innerText = link.match(/https:\/\/(?:\w*\.)?(\w+)\.\w+/)[1].toUpperCase()
 					
 					buttons.appendChild(a)
 				})
