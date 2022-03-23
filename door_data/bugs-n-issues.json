@@ -1,0 +1,326 @@
+{
+	"channel": {
+		"category_id": 698524608999063592,
+		"created_at": "2021-11-10 01:02:50.615000",
+		"hash": 216435770615,
+		"id": 907797418433732628,
+		"is_news": false,
+		"is_nsfw": false,
+		"mention": "<#907797418433732628>",
+		"name": "bugs-n-issues",
+		"position": 15,
+		"slowmode_delay": 10,
+		"topic": "This channel is for reporting bugs that can effect the build stablity.\n>>> ```\n+ Provide brief description.\n+ Please don't start a conversation here. Any irrelevant messages will be removed from this channel!\n+ Utilize threads if needed\n```"
+	},
+	"messages": [
+		{
+			"attachments": [],
+			"author": {
+				"avatar": {
+					"has_url": true,
+					"hash": 7572548827773158086,
+					"length": 101,
+					"url": "https://cdn.discordapp.com/avatars/282965566858461185/efaac291f2d7af4cdb9511a60174192f.webp?size=4096"
+				},
+				"avatar_hash": "efaac291f2d7af4cdb9511a60174192f",
+				"bot": false,
+				"color": "#000000",
+				"created_at": "2017-02-19 20:04:08.385000",
+				"default_avatar_url": {
+					"has_url": true,
+					"hash": -3646471390498584526,
+					"length": 46,
+					"url": "https://cdn.discordapp.com/embed/avatars/0.png"
+				},
+				"discriminator": "7915",
+				"display_name": "WavePlayz",
+				"hash": 67464248385,
+				"is_avatar_animated": false,
+				"mention": "<@282965566858461185>",
+				"name": "WavePlayz#7915",
+				"uid": 282965566858461185,
+				"username": "WavePlayz"
+			},
+			"channel_mentions": [],
+			"clean_content": "This channel is for reporting bugs that can effect the build stablity.\n>>> ```\n+ Provide brief description.\n+ Please don't start a conversation here. Any irrelevant messages will be removed from this channel!\n+ Utilize threads if needed\n```",
+			"content": "This channel is for reporting bugs that can effect the build stablity.\n>>> ```\n+ Provide brief description.\n+ Please don't start a conversation here. Any irrelevant messages will be removed from this channel!\n+ Utilize threads if needed\n```",
+			"created_at": "2021-11-10 01:03:55.244000",
+			"edited_at": "2021-11-10 01:05:35.054000",
+			"embeds": [],
+			"hash": -9223363254634310586,
+			"id": 907797689507414086,
+			"jump_url": "https://discord.com/channels/419608389916557322/907797418433732628/907797689507414086",
+			"mention_everyone": false,
+			"mentions": [],
+			"pinned": true,
+			"raw_channel_mentions": [],
+			"raw_mentions": [],
+			"raw_role_mentions": [],
+			"reactions": [
+				{
+					"count": 1,
+					"custom_emoji": true,
+					"emoji": {
+						"animated": false,
+						"id": 805801832303558746,
+						"name": "peepolove",
+						"url": "https://cdn.discordapp.com/emojis/805801832303558746.png"
+					},
+					"hash": 192118127895,
+					"me": false,
+					"string": "<:peepolove:805801832303558746>"
+				},
+				{
+					"count": 2,
+					"custom_emoji": true,
+					"emoji": {
+						"animated": false,
+						"id": 854526564096278538,
+						"name": "pepetriplemonka",
+						"url": "https://cdn.discordapp.com/emojis/854526564096278538.png"
+					},
+					"hash": 203735009216,
+					"me": false,
+					"string": "<:pepetriplemonka:854526564096278538>"
+				}
+			],
+			"role_mentions": [],
+			"system_content": "This channel is for reporting bugs that can effect the build stablity.\n>>> ```\n+ Provide brief description.\n+ Please don't start a conversation here. Any irrelevant messages will be removed from this channel!\n+ Utilize threads if needed\n```",
+			"webhook_id": null
+		},
+		{
+			"attachments": [],
+			"author": {
+				"avatar": {
+					"has_url": true,
+					"hash": 7572548827773158086,
+					"length": 101,
+					"url": "https://cdn.discordapp.com/avatars/282965566858461185/efaac291f2d7af4cdb9511a60174192f.webp?size=4096"
+				},
+				"avatar_hash": "efaac291f2d7af4cdb9511a60174192f",
+				"bot": false,
+				"color": "#000000",
+				"created_at": "2017-02-19 20:04:08.385000",
+				"default_avatar_url": {
+					"has_url": true,
+					"hash": -3646471390498584526,
+					"length": 46,
+					"url": "https://cdn.discordapp.com/embed/avatars/0.png"
+				},
+				"discriminator": "7915",
+				"display_name": "WavePlayz",
+				"hash": 67464248385,
+				"is_avatar_animated": false,
+				"mention": "<@282965566858461185>",
+				"name": "WavePlayz#7915",
+				"uid": 282965566858461185,
+				"username": "WavePlayz"
+			},
+			"channel_mentions": [],
+			"clean_content": "",
+			"content": "",
+			"created_at": "2021-11-10 01:04:01.413000",
+			"edited_at": "None",
+			"embeds": [],
+			"hash": -9223363254634310421,
+			"id": 907797715382046750,
+			"jump_url": "https://discord.com/channels/419608389916557322/907797418433732628/907797715382046750",
+			"mention_everyone": false,
+			"mentions": [],
+			"pinned": false,
+			"raw_channel_mentions": [],
+			"raw_mentions": [],
+			"raw_role_mentions": [],
+			"reactions": [],
+			"role_mentions": [],
+			"system_content": "WavePlayz pinned a message to this channel.",
+			"webhook_id": null
+		},
+		{
+			"attachments": [
+				{
+					"filename": "IMG_6595.png",
+					"hash": 8782220485669,
+					"height": 453,
+					"id": 907804245061935154,
+					"is_spoiler": false,
+					"size": 180252,
+					"url": "<Attachment id=907804245061935154 filename='IMG_6595.png' url='https://cdn.discordapp.com/attachments/907797418433732628/907804245061935154/IMG_6595.png'>",
+					"width": 530
+				}
+			],
+			"author": {
+				"avatar": {
+					"has_url": true,
+					"hash": -7809050499694260909,
+					"length": 101,
+					"url": "https://cdn.discordapp.com/avatars/325798375351910410/dc95bf470dd1be9077bd105a7694f314.webp?size=4096"
+				},
+				"avatar_hash": "dc95bf470dd1be9077bd105a7694f314",
+				"bot": false,
+				"color": "#000000",
+				"created_at": "2017-06-18 00:46:25.725000",
+				"default_avatar_url": {
+					"has_url": true,
+					"hash": 8978777479898830195,
+					"length": 46,
+					"url": "https://cdn.discordapp.com/embed/avatars/1.png"
+				},
+				"discriminator": "8111",
+				"display_name": "6eansauce",
+				"hash": 77676385725,
+				"is_avatar_animated": false,
+				"mention": "<@325798375351910410>",
+				"name": "6eansauce#8111",
+				"uid": 325798375351910410,
+				"username": "6eansauce"
+			},
+			"channel_mentions": [],
+			"clean_content": "Comparators reading items being dispensed into a Double-chest will power unreliably; with chance of powering after .4s instead of .3s if the double-chest is crossing a chunk border and the comparator is reading the crossing part.",
+			"content": "Comparators reading items being dispensed into a Double-chest will power unreliably; with chance of powering after .4s instead of .3s if the double-chest is crossing a chunk border and the comparator is reading the crossing part.",
+			"created_at": "2021-11-10 01:29:58.376000",
+			"edited_at": "2021-11-10 01:30:54.744000",
+			"embeds": [],
+			"hash": -9223363254634310619,
+			"id": 907804245758214145,
+			"jump_url": "https://discord.com/channels/419608389916557322/907797418433732628/907804245758214145",
+			"mention_everyone": false,
+			"mentions": [],
+			"pinned": false,
+			"raw_channel_mentions": [],
+			"raw_mentions": [],
+			"raw_role_mentions": [],
+			"reactions": [
+				{
+					"count": 4,
+					"custom_emoji": false,
+					"emoji": "\u2764\ufe0f",
+					"hash": -4347234245564019371,
+					"me": false,
+					"string": "\u2764\ufe0f"
+				}
+			],
+			"role_mentions": [],
+			"system_content": "Comparators reading items being dispensed into a Double-chest will power unreliably; with chance of powering after .4s instead of .3s if the double-chest is crossing a chunk border and the comparator is reading the crossing part.",
+			"webhook_id": null
+		},
+		{
+			"attachments": [],
+			"author": {
+				"avatar": {
+					"has_url": true,
+					"hash": -7809050499694260909,
+					"length": 101,
+					"url": "https://cdn.discordapp.com/avatars/325798375351910410/dc95bf470dd1be9077bd105a7694f314.webp?size=4096"
+				},
+				"avatar_hash": "dc95bf470dd1be9077bd105a7694f314",
+				"bot": false,
+				"color": "#000000",
+				"created_at": "2017-06-18 00:46:25.725000",
+				"default_avatar_url": {
+					"has_url": true,
+					"hash": 8978777479898830195,
+					"length": 46,
+					"url": "https://cdn.discordapp.com/embed/avatars/1.png"
+				},
+				"discriminator": "8111",
+				"display_name": "6eansauce",
+				"hash": 77676385725,
+				"is_avatar_animated": false,
+				"mention": "<@325798375351910410>",
+				"name": "6eansauce#8111",
+				"uid": 325798375351910410,
+				"username": "6eansauce"
+			},
+			"channel_mentions": [],
+			"clean_content": "https://imgur.com/a/wYfzGmP",
+			"content": "https://imgur.com/a/wYfzGmP",
+			"created_at": "2021-11-10 01:36:45.669000",
+			"edited_at": "None",
+			"embeds": [
+				{
+					"provider": {
+						"name": "Imgur",
+						"url": "https://imgur.com"
+					},
+					"thumbnail": {
+						"height": 854,
+						"proxy_url": "https://images-ext-2.discordapp.net/external/SYjnEp0hLKEDFYEEyd1i-MYLpr1LFoS1KWo8QFef2P0/https/i.imgur.com/yYY2V3bh.jpg",
+						"url": "https://i.imgur.com/yYY2V3bh.jpg",
+						"width": 854
+					},
+					"timestamp": "None",
+					"type": "gifv",
+					"url": "https://imgur.com/a/wYfzGmP",
+					"video": {
+						"height": 854,
+						"proxy_url": "https://images-ext-2.discordapp.net/external/qriepHTFqBFMZ-fgTKMWL6c8MEt3IrNZNhmlBTLr9hk/https/i.imgur.com/yYY2V3b.mp4",
+						"url": "https://i.imgur.com/yYY2V3b.mp4",
+						"width": 854
+					}
+				}
+			],
+			"hash": -9223363254634310520,
+			"id": 907805954068869220,
+			"jump_url": "https://discord.com/channels/419608389916557322/907797418433732628/907805954068869220",
+			"mention_everyone": false,
+			"mentions": [],
+			"pinned": false,
+			"raw_channel_mentions": [],
+			"raw_mentions": [],
+			"raw_role_mentions": [],
+			"reactions": [],
+			"role_mentions": [],
+			"system_content": "https://imgur.com/a/wYfzGmP",
+			"webhook_id": null
+		},
+		{
+			"attachments": [],
+			"author": {
+				"avatar": {
+					"has_url": true,
+					"hash": 7649085436036705560,
+					"length": 101,
+					"url": "https://cdn.discordapp.com/avatars/657916709411225621/c9cd2566b7d88741d919c2a98a598dd6.webp?size=4096"
+				},
+				"avatar_hash": "c9cd2566b7d88741d919c2a98a598dd6",
+				"bot": true,
+				"color": "#515ed0",
+				"created_at": "2019-12-21 12:06:07.025000",
+				"default_avatar_url": {
+					"has_url": true,
+					"hash": 8978777479898830195,
+					"length": 46,
+					"url": "https://cdn.discordapp.com/embed/avatars/1.png"
+				},
+				"discriminator": "0926",
+				"display_name": "WavePlayz (R. / rsp.)",
+				"hash": 156859567025,
+				"is_avatar_animated": false,
+				"mention": "<@!657916709411225621>",
+				"name": "WavePlayz#0926",
+				"uid": 657916709411225621,
+				"username": "WavePlayz"
+			},
+			"channel_mentions": [],
+			"clean_content": "fetching",
+			"content": "fetching",
+			"created_at": "2022-03-21 21:40:42.416000",
+			"edited_at": "None",
+			"embeds": [],
+			"hash": 8782220465305,
+			"id": 955581747339329576,
+			"jump_url": "https://discord.com/channels/419608389916557322/907797418433732628/955581747339329576",
+			"mention_everyone": false,
+			"mentions": [],
+			"pinned": false,
+			"raw_channel_mentions": [],
+			"raw_mentions": [],
+			"raw_role_mentions": [],
+			"reactions": [],
+			"role_mentions": [],
+			"system_content": "fetching",
+			"webhook_id": null
+		}
+	]
+}
