@@ -268,7 +268,7 @@ function makePost(iconurl, name, author, color, content, attachments) {
 					json.messages.forEach(m => {
 						posts.appendChild( makePost(
 							m.author.avatar.url ?? m.author.default_avatar_url.url ?? "None", 
-							m.author.username
+							m.author.username,
 							m.author.name,
 							m.author.color,
 							m.content,
