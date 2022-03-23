@@ -121,7 +121,7 @@
 	<!-- Optional JavaScript -->
 		
 		<script>
-function makePost(iconurl, name, author, color, content, attachments) {
+function makePost(iconurl, name, author, color, content, attachments, msg) {
 	function addClasses(cs, e) {
 		cs.forEach(
 			c => e.classList.add( c )
@@ -200,7 +200,7 @@ function makePost(iconurl, name, author, color, content, attachments) {
 				
 				let title = document.createElement('h4')
 				title.innerHTML = name
-				title.style.color = "darkblue"
+				title.style.color = "cyan"
 				addClasses(
 					["card-title" ],
 					title
@@ -229,7 +229,7 @@ function makePost(iconurl, name, author, color, content, attachments) {
 
 				})
 				
-				content = content.replace(/\w+x\w+x\w+=\w+/, "<b>$&</b>")
+				content = content.replace(/\w+x\w+x\w+=\w+/, "<bold>$&</bold>")
 				
 				
 				para.appendChild( document.createTextNode( content ) )
@@ -259,7 +259,21 @@ function makePost(iconurl, name, author, color, content, attachments) {
 				})
 				
 				body .appendChild( buttons )
+			
+			
+			let footer = document.createElement('div')
+			addClasses(["card-footer"], footer)
+			card .appendChild( footer )
+			
+				let posted = document.createElement('small')
+				addClasses(["text-muted"], posted)
+				posted.innerHTML = "Posted at: " + msg.created_at
+				msg.created_at && footer .appendChild( posted )
 				
+				let editted = document.createElement('small')
+				addClasses(["text-muted"], editted)
+				editted.innerHTML = "Editted at: " + msg.edited_at
+				msg.edited_at && footer .appendChild( editted )
 				
 				
 	return post
