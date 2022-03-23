@@ -207,6 +207,13 @@ function makePost(iconurl, author, content) {
 				
 				body .appendChild( para )
 				
+				attachments.forEach(url => {
+					let img = document.createElement('img')
+					iconImage.src = url
+					body .appendChild( img )
+				})
+				
+				
 	return post
 }
 
@@ -222,7 +229,12 @@ function makePost(iconurl, author, content) {
 				.then(function(json) {
 					// do something with jsonResponse
 					json.messages.forEach(m => {
-						posts.appendChild( makePost( m.author.avatar.url, m.author.name, m.content ) )
+						posts.appendChild( makePost(
+							m.author.avatar.url ?? m.author.default_avatar_url.url ?? "None", 
+							m.author.name, 
+							m.content,
+							m.attachments.map( v => getUrl(v.url) )
+							) )
 					})
 					
 				});
