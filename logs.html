@@ -244,6 +244,8 @@ function makePost(iconurl, name, author, color, content, attachments, msg) {
 					let isVideo = url.endsWith(".mp4")
 					let img = document.createElement(isVideo ? "video" : 'img')
 					addClasses(  [ "card-img-bottom" ], img  )
+					img.style.maxWidth = "100%"
+					
 					img.src = url
 					body .appendChild( img )
 				})
