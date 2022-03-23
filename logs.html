@@ -229,6 +229,8 @@ function makePost(iconurl, name, author, color, content, attachments) {
 
 				})
 				
+				content = content.replace(/\w+x\w+x\w+=\w+/, "<b>$&</b>")
+				
 				
 				para.appendChild( document.createTextNode( content ) )
 				
