@@ -304,7 +304,7 @@ let tot = msg.reverse()
 const urlParams = new URLSearchParams(window.location.search)
 let page = Number(urlParams.get('page')) < 1 ?? 1
 
-let max = 10
+let max = 15
 let pages = Math.floor( tot/max )
 
 let paging = document.createElement('small')
@@ -312,8 +312,7 @@ addClasses(["text-muted"], paging)
 paging.innerHTML = `${tot.length} POSTS | SHOWING ${max} POSTS FROM ${page} PAGE of ${pages} PAGES`
 document.body.appendChild( paging )
 
-// hm
-//
+
 let ps = tot.splice(page-1, max)
 
 
