@@ -345,7 +345,7 @@ ps.forEach(m => {
 ]
 
 if (last) {
-	if ( last[2] !== now[2] ) {
+	if ( last[2] !== now[2] || new Date(now[6].created_at).getTime()  -  new Date(last[6].created_at).getTime() > 7200000 / 2) {
 		posts.appendChild( makePost() )
 		last = null
 	} else {
