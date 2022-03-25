@@ -331,20 +331,33 @@ document.getElementById("titles").appendChild( paging )
 let ps = tot.splice(page, max)
 
 
+let last = 
 
 ps.forEach(m => {
-						posts.appendChild( makePost(
-							m.author.avatar.url ?? m.author.default_avatar_url.url ?? "None", 
-							m.author.username,
-							m.author.name,
-							m.author.color,
-							m.content,
-							m.attachments.map( v => getUrl(v.url) ),
-							m
-							) )
-					})
-					
-				});
+	let now = [
+			m.author.avatar.url ?? m.author.default_avatar_url.url ?? "None", 
+			m.author.username,
+			m.author.name,
+			m.author.color,
+			m.content,
+			m.attachments.map( v => getUrl(v.url) ),
+			m
+]
+
+if (last) {
+	if ( last[2] !== now[2] ) {
+		posts.appendChild( makePost() )
+		last = null
+	} else {
+		last[4] += "\n"+now[4]
+	}
+} else {
+		last = now
+}
+		
+	})
+	
+});
 			
 			console.log('yes')
 			
