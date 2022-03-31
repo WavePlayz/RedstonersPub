@@ -335,10 +335,12 @@ document.getElementById("titles").appendChild( paging )
 
 let ps = tot.splice(page, max)
 
+console.log(ps, page, max, pages)
 
 let last
+let ig
 
-ps.forEach(m => {
+ps.forEach((m,i) => {
 	let now = [
 			m.author.avatar.url ?? m.author.default_avatar_url.url ?? "None", 
 			m.author.username,
@@ -349,17 +351,23 @@ ps.forEach(m => {
 			m
 ]
 
-if (last) {// hope works
-	if ( last[2] == now[2] && new Date(now[6].created_at).getTime()  -  new Date(last[6].created_at).getTime() < 1000 * 60 * 60 * 10 ) {
+let next = ps[i+1]
+
+//posts.appendChild( makePost(...last) )
+//return
+
+	if (next && now[2] == next[2] && new Date(next[6].created_at).getTime()  -  new Date(now[6].created_at).getTime() < 1000 * 60 * 60 * 18 ) {
+		
+		if (!last) last = now;
+		
 		last[4] += "\n"+now[4]
+		
 		
 	} else {
 		posts.appendChild( makePost(...last) )
-		last = null
+		
 	}
-} else {
-	last = now
-}
+
 		
 	})
 	
@@ -367,7 +375,7 @@ if (last) {// hope works
 			
 			console.log('yes')
 			
-			document.write(LOGS_DATA)
+			//document.write(LOGS_DATA)
 			
 		</script>
 		
