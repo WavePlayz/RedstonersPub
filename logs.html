@@ -314,17 +314,22 @@ msg.pop()
 let tot = msg.reverse()
 
 const urlParams = new URLSearchParams(window.location.search)
-let page = Number(urlParams.get('page')) ?? 0
+let page = Number(urlParams.get('page'))
+
+if (!page || page < 1) page = 1;
 
 let max = 15
-let pages = Math.floor( tot.length/max )
+let pages = Math.ceil( tot.length/max )
 
 let paging = document.createElement('small')
+
 addClasses(["text-muted", "text-center"], paging)
 paging.style.fontFamily = "unibold"
 paging.style.opacity = 0.8
 
-paging.innerHTML = `${tot.length} POSTS | SHOWING ${max} POSTS FROM ${page+1} PAGE of ${pages} PAGES`
+paging.innerHTML = `- showing ${Math.min(max,tot.length-max)} posts from ${page} page | ${pages} pages (${tot.length} posts)`
+
+//paging.innerHTML = `${tot.length} POSTS | SHOWING ${max} POSTS FROM ${page+1} PAGE of ${pages} PAGES`
 document.getElementById("titles").appendChild( paging )
 
 
