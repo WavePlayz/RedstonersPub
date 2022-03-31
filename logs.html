@@ -321,7 +321,10 @@ let user = (urlParams.get('user'))
 
 if (!page || page < 1) page = 1;
 if (!max || max < 1) max = 14;
-if (all) max = tot.length;
+if (all) {
+	page = 1
+	max = tot.length;
+}
 
 if (user) tot = tot.filter(({ author: { uid, name, username, display_name  } }) => {
 	return [uid, name, username, display_name].includes( user ) 
