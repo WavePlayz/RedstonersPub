@@ -342,7 +342,10 @@ addClasses(["text-muted", "text-center"], paging)
 paging.style.fontFamily = "unibold"
 paging.style.opacity = 0.8
 
-paging.innerHTML = `- showing ${Math.min(max,pages)} posts from ${page} page | ${pages} pages (${tot.length} posts)`
+paging.innerHTML = max > 0 
+? `- showing ${Math.min(max,pages)} posts from ${page} page | ${pages} pages (${tot.length} posts)`
+: "Opps.."
+
 
 //paging.innerHTML = `${tot.length} POSTS | SHOWING ${max} POSTS FROM ${page+1} PAGE of ${pages} PAGES`
 document.getElementById("titles").appendChild( paging )
