@@ -327,7 +327,7 @@ if (all) {
 }
 
 if (user) tot = tot.filter(({ author: { uid, name, username, display_name  } }) => {
-	return [uid, name, username, display_name].includes( user ) 
+	return ([uid, name, username, display_name]).map(String).includes( user ) 
 });
 
 
