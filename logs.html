@@ -316,19 +316,20 @@ let tot = msg.reverse()
 const urlParams = new URLSearchParams(window.location.search)
 let page = Number(urlParams.get('page'))
 let max = Number(urlParams.get('max'))
-let all = Boolean(urlParams.get('all'))
 let user = (urlParams.get('user'))
+let all = Boolean(urlParams.get('all'))
 
 if (!page || page < 1) page = 1;
 if (!max || max < 1) max = 14;
-if (all) {
-	page = 1
-	max = tot.length;
-}
 
 if (user) tot = tot.filter(({ author: { uid, name, username, display_name  } }) => {
 	return ([uid, name, username, display_name]).map(String).includes( String(user) ) 
 });
+
+if (all) {
+	page = 1
+	max = tot.length;
+}
 
 console.log(page,max,all,user)
 
