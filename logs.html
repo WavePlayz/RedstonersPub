@@ -318,7 +318,7 @@ let page = Number(urlParams.get('page'))
 let max = Number(urlParams.get('max'))
 
 if (!page || page < 1) page = 1;
-if (!page || page < 1) max = 15;
+if (!max || max < 1) max = 15;
 
 
 let pages = Math.ceil( tot.length/max )
