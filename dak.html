@@ -178,7 +178,7 @@ function addClasses(cs, e) {
 		) 
 	}
 			
-function makePost(id, content) {
+function makePost(id, content, time) {
 	
 	
 	
@@ -272,7 +272,7 @@ function makePost(id, content) {
 				
 				body .appendChild( buttons )
 			
-			/*
+			
 			let footer = document.createElement('div')
 			addClasses(["card-footer"], footer)
 			card .appendChild( footer )
@@ -280,16 +280,11 @@ function makePost(id, content) {
 				let posted = document.createElement('small')
 				addClasses(["text-muted"], posted)
 				
-				posted.innerHTML = "Posted at: " + msg.created_at.split(".")[0]
-				msg.created_at != "None" && footer .appendChild( posted )
+				posted.innerHTML = time
 				
 				footer .appendChild( document.createElement('br') )
 				
-				let editted = document.createElement('small')
-				addClasses(["text-muted"], editted)
-				editted.innerHTML = "Editted at: " + msg.edited_at.split(".")[0]
-				msg.edited_at != "None" && footer .appendChild( editted )
-				*/
+				
 				
 	return post
 }
@@ -308,7 +303,7 @@ xhr.onreadystatechange = function() {
         let posts = document.getElementById("posts")
         
           for (let i in re) {
-				posts.appendChild( makePost(i, re[i].content) )
+				posts.appendChild( makePost(i, re[i].content, new Date(re[i].time).toString() ) )
 		}
       }
     }
