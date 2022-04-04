@@ -390,6 +390,20 @@ let next = ps[i+1]
 		
 	})
 	
+	
+	
+	document.getElementById('preLoader').style.display = "none";
+	window.scrollTo(0,0);
+	let loader = document.getElementById('preLoader');
+	if (loader.style.display == "none") {
+		// statement
+		document.body.classList.remove('scroll-hide');
+	}
+	else {
+		document.body.classList.add('scroll-hide');
+	}
+	
+	
 });
 			
 			console.log('yes')
@@ -400,16 +414,7 @@ let next = ps[i+1]
 		
 		<script>
 			window.addEventListener('load', () => {
-				document.getElementById('preLoader').style.display = "none";
-				window.scrollTo(0,0);
-				let loader = document.getElementById('preLoader');
-				if (loader.style.display == "none") {
-					// statement
-					document.body.classList.remove('scroll-hide');
-				}
-				else {
-					document.body.classList.add('scroll-hide');
-				}
+				
 			});
 		</script>
 		<script>
