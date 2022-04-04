@@ -299,10 +299,11 @@ xhr.open("GET", url, true);
 xhr.onreadystatechange = function() {
       if (xhr.readyState === 4) {
         var re = JSON.parse(xhr.responseText);
+        let ks = Object.keys(re).reverse()
         console.log(re)
         let posts = document.getElementById("posts")
         
-          for (let i in re) {
+          for (let i of ks) {
 				posts.appendChild( makePost(i, re[i].content, new Date(re[i].time).toString() ) )
 		}
       }
