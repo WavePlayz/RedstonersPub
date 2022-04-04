@@ -167,6 +167,156 @@ xhr.send(JSON.stringify({
     time: Date.now()
 }));
 			}
+
+
+
+
+
+function addClasses(cs, e) {
+		cs.forEach(
+			c => e.classList.add( c )
+		) 
+	}
+			
+function makePost(id, content) {
+	
+	
+	
+	
+	let post = document.createElement('div')
+	post.style.paddingTop = "15px"
+	post.style.paddingBottom = "15px"
+	addClasses(
+		[ "col-sm-6" , "col-md-4", "col-lg-3"
+], 
+		post
+	)
+	
+	
+	
+	
+		let card = document.createElement('div')
+		card.style.background = "#363a3d"
+		card.style.borderLeft = "3.5px solid " + "3d3d3d"
+		addClasses(
+			["card", "text-white" ],
+			card
+		)
+		post.appendChild(card)
+		
+		
+		
+			let header = document.createElement('div')
+			addClasses(
+				["card-header" ],
+				header
+			)
+			card .appendChild( header )
+			
+			
+				let badge = document.createElement('span')
+				addClasses(
+					["badge" ],
+					badge
+				)
+				badge.style.background = "#3f4347"
+				badge.innerHTML = id
+				
+				header .appendChild( badge )
+				
+				
+			let body = document.createElement('div')
+			addClasses(
+				["card-body" ],
+				body
+			)
+			card .appendChild( body )
+				
+				
+				let para = document.createElement('p')
+				addClasses(
+					["card-text", "scroll-hide" ],
+					para
+				)
+				//para.style.maxHeight = "80px"
+				console.warn(content)
+				let links = content?.match(/https:\/\/.*/g)
+				
+				links?.forEach(link => {
+					content = content.replaceAll(link, "") 
+
+				})
+				
+				content = content.replace(/\w+x\w+x\w+=\w+/, "$&")
+				
+				
+				para.appendChild( document.createTextNode( content ) )
+				
+				body .appendChild( para )
+				
+				
+				let buttons = document.createElement('div')
+				addClasses( ["btn-group","btn-group-sm"], buttons )
+				buttons.setAttribute("role", "group")
+				
+				
+				
+				links?.forEach( link => {
+					let a = document.createElement('a')
+					addClasses(["btn", "text-white", "dark-hover"], a)
+					a.href = link
+					a.innerText = link.match(/https?:\/\/(?:\w*\.)?(\w+)\.\w+/)[1].toUpperCase()
+					
+					buttons.appendChild(a)
+				})
+				
+				body .appendChild( buttons )
+			
+			/*
+			let footer = document.createElement('div')
+			addClasses(["card-footer"], footer)
+			card .appendChild( footer )
+			
+				let posted = document.createElement('small')
+				addClasses(["text-muted"], posted)
+				
+				posted.innerHTML = "Posted at: " + msg.created_at.split(".")[0]
+				msg.created_at != "None" && footer .appendChild( posted )
+				
+				footer .appendChild( document.createElement('br') )
+				
+				let editted = document.createElement('small')
+				addClasses(["text-muted"], editted)
+				editted.innerHTML = "Editted at: " + msg.edited_at.split(".")[0]
+				msg.edited_at != "None" && footer .appendChild( editted )
+				*/
+				
+	return post
+}
+
+
+
+			
+			
+var xhr = new XMLHttpRequest();
+xhr.open("GET", url, true);
+
+xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        var re = JSON.parse(xhr.responseText);
+        console.log(re)
+        let posts = document.getElementById("posts")
+        
+          for (let i in re) {
+				posts.appendChild( makePost(i, re[i].content) )
+		}
+      }
+    }
+xhr.send()
+;
+			
+			
+			
 			
 			window.addEventListener('load', () => {
 				document.getElementById('preLoader').style.display = "none";
