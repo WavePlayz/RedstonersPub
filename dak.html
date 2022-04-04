@@ -260,8 +260,8 @@ function makePost(id, content, time) {
 				buttons.setAttribute("role", "group")
 				
 				let del = document.createElement('button')
-					addClasses(["btn", "text-white", "dark-hover"], a)
-					del.onclick = `delete( ${id} )`
+					addClasses(["btn", "text-white", "dark-hover"], del)
+					del.onclick = `deletee( ${id} )`
 					del.innerText = "DELETE"
 					
 					buttons.appendChild( del )
@@ -319,7 +319,11 @@ xhr.send()
 ;
 
 
-function delete(id) {
+
+
+			
+			
+function deletee(id) {
 	const url = "https://test-c1d64-default-rtdb.firebaseio.com/posts/" + id + ".json"
 	
 	var xhr = new XMLHttpRequest();
@@ -339,10 +343,7 @@ xhr.onreadystatechange = function() {
       }
  }
 xhr.send()
-
-
 }
-			
 			
 			
 			
