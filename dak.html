@@ -248,6 +248,7 @@ function makePost(id, content, time, pass) {
 					del.type = "button"
 					del.ariaLabel = "Close"
 					del.onclick = function() {
+						console.warn(pass)
 						let o = prompt("who is the boss")
 if (o=="boss is the boss" || o==pass) deletee( id );
 }
@@ -338,7 +339,7 @@ xhr.onreadystatechange = function() {
         let posts = document.getElementById("posts")
         
           for (let i of ks) {
-				posts.appendChild( makePost(i, re[i].content, (new Date(re[i].time)).toString()), re[i].pass  )
+				posts.appendChild( makePost(i, re[i].content, (new Date(re[i].time)).toString(), re[i].pass ) )
 		}
       }
     }
