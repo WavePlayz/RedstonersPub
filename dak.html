@@ -261,7 +261,7 @@ function makePost(id, content, time) {
 				
 				let del = document.createElement('button')
 					addClasses(["btn", "text-white", "dark-hover"], del)
-					del.onclick = `deletee( ${id} )`
+					del.onClick = () => deletee( id );
 					del.innerText = "DELETE"
 					
 					buttons.appendChild( del )
