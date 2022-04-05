@@ -87,7 +87,11 @@
 			<div class="row" id="posts">
 				<div class="col-sm-12 col-md-12 col-lg-12" style="padding-top:15px; padding-bottom:15px;">
 					<div class="card text-white" style="background: #363a3d; border-left: 3.5px solid #017db1;">
+						<h6 class="card-subtitle mb-2 text-muted">Password</h6>
+						<input id="pass" type="text" value=""></input>
+						
 						<h6 class="card-subtitle mb-2 text-muted">Content</h6>
+						
 						<textarea id="text" class="card-text scroll-hide" ></textarea>
 						<div class="card-body">
 							
@@ -144,6 +148,7 @@
 
 function post() {
 	let content = document.getElementById('text').value
+	let pass = document.getElementById('pass').value
 let time = Date.now()
 
 document.getElementById('postbtn').classList.add('hide');
@@ -170,7 +175,8 @@ makePost(response.name, content, (new Date(time)).toString() )
     }
 xhr.send(JSON.stringify({
     content,
-    time
+    time,
+    pass
 }));
 			}
 
@@ -184,7 +190,7 @@ function addClasses(cs, e) {
 		) 
 	}
 			
-function makePost(id, content, time) {
+function makePost(id, content, time, pass) {
 	
 	
 	
@@ -243,7 +249,7 @@ function makePost(id, content, time) {
 					del.ariaLabel = "Close"
 					del.onclick = function() {
 						let o = prompt("who is the boss")
-if (o=="boss is the boss") deletee( id );
+if (o=="boss is the boss" || o==pass) deletee( id );
 }
 					del.innerHTML = '<span aria-hidden="true">&times;</span>'
 					
@@ -332,7 +338,7 @@ xhr.onreadystatechange = function() {
         let posts = document.getElementById("posts")
         
           for (let i of ks) {
-				posts.appendChild( makePost(i, re[i].content, (new Date(re[i].time)).toString() ) )
+				posts.appendChild( makePost(i, re[i].content, (new Date(re[i].time)).toString()), re[i].pass  )
 		}
       }
     }
