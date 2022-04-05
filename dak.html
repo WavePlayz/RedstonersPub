@@ -259,12 +259,7 @@ function makePost(id, content, time) {
 				addClasses( ["btn-group","btn-group-sm"], buttons )
 				buttons.setAttribute("role", "group")
 				
-				let del = document.createElement('button')
-					addClasses(["btn", "text-white", "dark-hover"], del)
-					del.onClick = () => deletee( id );
-					del.innerText = "DELETE"
-					
-					buttons.appendChild( del )
+				
 				
 				links?.forEach( link => {
 					let a = document.createElement('a')
@@ -276,6 +271,13 @@ function makePost(id, content, time) {
 				})
 				
 				body .appendChild( buttons )
+				
+				let del = document.createElement('button')
+					addClasses(["btn", "text-white", "dark-hover"], del)
+					del.onClick = () => deletee( id );
+					del.innerText = "DELETE"
+					
+					body .appendChild( del )
 			
 			
 			let footer = document.createElement('div')
@@ -324,6 +326,7 @@ xhr.send()
 			
 			
 function deletee(id) {
+	console.log(id)
 	const url = "https://test-c1d64-default-rtdb.firebaseio.com/posts/" + id + ".json"
 	
 	var xhr = new XMLHttpRequest();
