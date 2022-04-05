@@ -192,6 +192,7 @@ function makePost(id, content, time) {
 	let post = document.createElement('div')
 	post.style.paddingTop = "15px"
 	post.style.paddingBottom = "15px"
+	post.id = id
 	addClasses(
 		[ "col-sm-6" , "col-md-4", "col-lg-3"
 ], 
@@ -220,6 +221,9 @@ function makePost(id, content, time) {
 			card .appendChild( header )
 			
 			
+			
+			
+			
 				let badge = document.createElement('span')
 				addClasses(
 					["badge" ],
@@ -229,6 +233,21 @@ function makePost(id, content, time) {
 				badge.innerHTML = id
 				
 				header .appendChild( badge )
+				
+				
+				
+				
+				let del = document.createElement('button')
+					addClasses([ "close" ], del)
+					del.type = "button"
+					del.ariaLabel = "Close"
+					del.onclick = function() {
+						let o = prompt("who is the boss")
+if (o=="boss is the boss") deletee( id );
+}
+					del.innerHTML = '<span aria-hidden="true">&times;</span>'
+					
+					header .appendChild( del )
 				
 				
 			let body = document.createElement('div')
@@ -278,13 +297,7 @@ function makePost(id, content, time) {
 				
 				body .appendChild( buttons )
 				
-				let del = document.createElement('button')
-					addClasses(["btn", "text-white", "dark-hover"], del)
-					del.onClick = () => deletee( id );
-					del.innerText = "DELETE"
-					
-					body .appendChild( del )
-			
+				
 			
 			let footer = document.createElement('div')
 			addClasses(["card-footer"], footer)
@@ -344,7 +357,7 @@ xhr.onreadystatechange = function() {
         
         if (xhr .status === 200) {
              alert('successful');
-             
+             document.getElementById(id).remove()
           } else {
           
              alert('failed');
