@@ -1,18 +1,26 @@
 <html>
 	<head>
 <style>
-	.tag {
-padding: 0px;
-margin: 10px;
-background: #3d3d3d;
-
-display: inline-box;
+#log {
+	width:max-content;
 }
+	
+	.tag {
+padding: 2px;
+background: #eee;
+width: auto;
+display:inline-block;
+font-weight: bolder;
+
+}
+
+
 </style>
 </head>
 <body>
 	
 <input oninput="fn(this.value)"></input>
+<br>
 <div id="log"></div>
 
 <script>
@@ -270,7 +278,7 @@ ar.forEach(v => {
 	if (n == l) o.push(v);
 }) 
 console.log(o)
-log.innerHTML = o.map(v=>`<span class='tag' style="color: #${v.split('').reduce((r,v)=>r+v.charCodeAt(),0).toString(16)}">${v}</span>`).join("<br>")
+log.innerHTML = o.map(v=>`<span class='tag' style="color: #${v.split('').reduce((r,v)=>(r+v.charCodeAt())%16777215,0).toString(16)}">${v}</span>`).join("<br>")
 //setTimeout(fn,100)
 }
 //fn()
