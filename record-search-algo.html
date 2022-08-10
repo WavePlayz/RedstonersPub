@@ -6,12 +6,21 @@
 }
 	
 	.tag {
-padding: 2px;
+padding: 0 12px;
 background: #eee;
 width: auto;
 display:inline-block;
 font-weight: bolder;
 
+}
+
+.tag:before {
+content: "+";
+font-weight: light;
+padding: 0 2px;
+font-size: 1em;
+text-align: "middle";
+color: #ccc;
 }
 
 
@@ -256,22 +265,32 @@ for (let i = 0, j = 0; i < a.length; i++) {
 return n
 }
 
+let m2 = (a,b) => b.length - (a.split('').reduce((r,v) => r.replace(v,''),b).length);
 
+let last = null
 let fn = (v) => {
+
+if (last) clearInterval(last);
+
+last = setTimeout(() => {
+	
+
 let i = (v ?? prompt()).replace(/\s+/g,'-')
+if (!i) {log.innerHTML = "";return;}
 let l = null
 let o = []
 ar.forEach(v => {
 	if (!v) return;
 	v = v.trim().split(/\s+/)[0]
 	
-	let q = mm(i,v)
+	let q = i.split('').some((k) => v.includes(k))//mm(i,v)
+	//let qq = m2(i,v)
 	if (!q) return;
 	let p = ld(i,v) 
 	
-	let n = p / q
+	let n = p // q
 	console.log(i,v,p,q, n )
-	if (!l || n < l) {
+	if (l==null || n < l) {
 		o = []
 		l = n
 	};
@@ -280,6 +299,9 @@ ar.forEach(v => {
 console.log(o)
 log.innerHTML = o.map(v=>`<span class='tag' style="color: #${v.split('').reduce((r,v)=>(r+v.charCodeAt())%16777215,0).toString(16)}">${v}</span>`).join("<br>")
 //setTimeout(fn,100)
+
+}, 234)
+
 }
 //fn()
 </script>
