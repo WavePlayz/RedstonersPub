@@ -7,28 +7,28 @@
 	
 	.tag {
 padding: 0 12px;
-background: #eee;
+background: #cde;
 width: auto;
 display:inline-block;
 font-weight: bolder;
 
-/**animation: fadeIn 0.15s;**/
+animation: fadeIn 0.5s;
 
 }
 
 .tag:before {
-content: "+";
+content: "#";
+
 font-weight: light;
-padding: 0 2px;
-font-size: 1em;
-text-align: "middle";
-color: #ccc;
+padding: 0 8px;
+
+
+color: #ddd;
 }
 
 @keyframes fadeIn {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
+  0% { opacity: 0; transform: rotateX(90deg); }
+  100% { opacity: 1; transform: rotateX(0deg); }
 }
 
 
@@ -36,7 +36,7 @@ color: #ccc;
 </head>
 <body>
 	
-<input oninput="fn(this.value)"></input>
+<input onkeyup="fn(this.value)"></input>
 <br>
 <div id="log"></div>
 
@@ -305,11 +305,23 @@ ar.forEach(v => {
 	if (n == l) o.push(v);
 }) 
 console.log(o)
-log.style.animation = "fadeIn 0.15s"
+
+let n = setInterval(() => {
+	log.style.opacity -= 0.045
+	
+	if (log.style.opacity > 0) return;
+	
+	clearInterval(n)
+	
+	log.style.opacity = 1
 log.innerHTML = o.map(v=>`<span class='tag' style="color: #${v.split('').reduce((r,v)=>(r+v.charCodeAt())%16777215,0).toString(16)}">${v}</span>`).join("<br>")
+})
+
+
+
 //setTimeout(fn,100)
 
-}, 200)
+}, 360)
 
 }
 //fn()
