@@ -231,7 +231,7 @@ for (let i = 0, j = 0; i < a.length; i++) {
 		}
 		
 		j = k
-		n++
+		n++ 
 		break
 	}
 }
