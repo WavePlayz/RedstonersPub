@@ -270,7 +270,7 @@ ar.forEach(v => {
 	if (n == l) o.push(v);
 }) 
 console.log(o)
-log.innerHTML = o.map(v=>`<span class='tag'>${v}</span>`).join("<br>")
+log.innerHTML = o.map(v=>`<span class='tag' style="color: #${v.split('').reduce((r,v)=>r+v.charCodeAt(),0).toString(16)}">${v}</span>`).join("<br>")
 //setTimeout(fn,100)
 }
 //fn()
