@@ -12,6 +12,8 @@ width: auto;
 display:inline-block;
 font-weight: bolder;
 
+/**animation: fadeIn 0.15s;**/
+
 }
 
 .tag:before {
@@ -21,6 +23,12 @@ padding: 0 2px;
 font-size: 1em;
 text-align: "middle";
 color: #ccc;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 
@@ -297,6 +305,7 @@ ar.forEach(v => {
 	if (n == l) o.push(v);
 }) 
 console.log(o)
+log.style.animation = "fadeIn 0.15s"
 log.innerHTML = o.map(v=>`<span class='tag' style="color: #${v.split('').reduce((r,v)=>(r+v.charCodeAt())%16777215,0).toString(16)}">${v}</span>`).join("<br>")
 //setTimeout(fn,100)
 
