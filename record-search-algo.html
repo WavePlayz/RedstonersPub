@@ -36,7 +36,7 @@ color: #ddd;
 </head>
 <body>
 	
-<input onkeyup="fn(this.value)"></input>
+<input id="inp" onkeyup="fn(this.value)"></input>
 <br>
 <div id="log"></div>
 
@@ -301,7 +301,7 @@ mm(i,v)
 	let p = ld(i,v) 
 	
 	let n = p // q
-	console.log(i,v,p,q, n, p/q )
+	console.log(i, v, p, q, p/q )
 	if (l==null || n < l) {
 		o = []
 		l = n
@@ -309,6 +309,10 @@ mm(i,v)
 	if (n == l) o.push(v);
 }) 
 console.log(o)
+
+if (o[0]) inp.autocomplete = o[0];
+
+console.log( )
 
 let n = setInterval(() => {
 	log.style.opacity -= 0.045
@@ -325,7 +329,7 @@ log.innerHTML = o.map(v=>`<span class='tag' style="color: #${v.split('').reduce(
 
 //setTimeout(fn,100)
 
-}, 360)
+}, 250)
 
 }
 //fn()
