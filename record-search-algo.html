@@ -260,7 +260,7 @@ ar.forEach(v => {
 	if (n == l) o.push(v);
 }) 
 console.log(o)
-log.innerHTML = o.join("<br>")
+log.innerHTML = o.map(v=>`<span class='tag'>${v}</span>`).join("<br>")
 //setTimeout(fn,100)
 }
 //fn()
