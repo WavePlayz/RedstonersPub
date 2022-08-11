@@ -339,7 +339,10 @@ let n = setInterval(() => {
 	clearInterval(n)
 	
 	log.style.opacity = 1
-log.innerHTML = o.filter(Boolean).splice(0,2).flat().splice(0,10).map( (v,ii) => `<span onclick="inp.value = '${v.split(/,/)[0]}'; inp.focus()" class='tag' style="color: #${v.split('').reduce((r,v)=>(r+v.charCodeAt())%16777215,0).toString(16)}; animation: cubic-bezier(0.25,1, 0.5,1) fadeIn ${0.5+(ii*0.5)}s;">${v}</span>`).join("<br>")
+	let da = o.filter(Boolean).splice(0,2).flat().splice(0,10)
+	
+	if (!da.some(v => v.startsWith(i) )) da.splice(10,0, "+" + i);
+log.innerHTML = da.map( (v,ii) => `<span onclick="if('${v}'.startsWith('+')) { ar.push('${v.replace(\'+\',\'\')}'); }; tit.innerHTML += '${v.split(/,/)[0]} '; inp.focus(); this.onclick = null" class='tag' style="color: #${v.split('').reduce((r,v)=>(r+v.charCodeAt())%16777215,0).toString(16)}; animation: cubic-bezier(0.25,1, 0.5,1) fadeIn ${0.5+(ii*0.5)}s;">${v}</span>`).join("<br>")
 })
 
 
