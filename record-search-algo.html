@@ -301,7 +301,13 @@ mm(i,v)
 	let p = ld(i,v) 
 	
 	let n = p // q
+	let nn = Math.floor(p/q)
 	console.log(i, v, p, q, p/q )
+	
+	if (!o[nn]) o[nn] = [];
+	o[nn].push(v+"-"+nn  )
+	return
+	
 	if (l==null || n < l) {
 		o = []
 		l = n
@@ -310,9 +316,11 @@ mm(i,v)
 }) 
 console.log(o)
 
-if (o[0]) inp.autocomplete = o[0];
+//if (o[0]) inp.value = o[0];
 
-console.log( )
+console.log( inp )
+
+
 
 let n = setInterval(() => {
 	log.style.opacity -= 0.045
@@ -322,7 +330,7 @@ let n = setInterval(() => {
 	clearInterval(n)
 	
 	log.style.opacity = 1
-log.innerHTML = o.map(v=>`<span class='tag' style="color: #${v.split('').reduce((r,v)=>(r+v.charCodeAt())%16777215,0).toString(16)}">${v}</span>`).join("<br>")
+log.innerHTML = o.flat().splice(0,5).map(v => `<span onclick="inp.value = '${v}'; inp.focus()" class='tag' style="color: #${v.split('').reduce((r,v)=>(r+v.charCodeAt())%16777215,0).toString(16)}">${v}</span>`).join("<br>")
 })
 
 
@@ -332,6 +340,13 @@ log.innerHTML = o.map(v=>`<span class='tag' style="color: #${v.split('').reduce(
 }, 250)
 
 }
+
+
+function sinp(v) {
+	inp.value = v
+}
+
+
 //fn()
 </script>
 </body>
