@@ -26,6 +26,16 @@ padding: 0 8px;
 color: #ddd;
 }
 
+.tag2:before {
+content: "+";
+
+font-weight: bolder;
+padding: 0 8px;
+
+
+color: #ddd;
+}
+
 @keyframes fadeIn {
   0% { opacity: 0; transform: translateY(50px);  }
   100% { opacity: 1; transform: translateY(0px);  }
@@ -259,12 +269,12 @@ for (let i = 0, j = 0; i < a.length; i++) {
 		let cc = b[k]
 		
 		if (c!=cc) {
-			/*
+			
 			if (k == b.length-1) {
 				i = a.length
 				n = 0
 				break
-			}*/
+			}
 			continue;
 		}
 		
@@ -342,7 +352,7 @@ let n = setInterval(() => {
 	let da = o.filter(Boolean).splice(0,2).flat().splice(0,10)
 	
 	if (!da.some(v => v.startsWith(i) )) da.splice(10,0, "+" + i);
-log.innerHTML = da.map( (v,ii) => `<span onclick="if('${v}'.startsWith('+')) { ar.push('${v}'.replace('+','')); }; tit.innerHTML += '${v.split(/,/)[0]} '; inp.focus(); this.onclick = null" class='tag' style="color: #${v.split('').reduce((r,v)=>(r+v.charCodeAt())%16777215,0).toString(16)}; animation: cubic-bezier(0.25,1, 0.5,1) fadeIn ${0.5+(ii*0.5)}s;">${v}</span>`).join("<br>")
+log.innerHTML = da.map( (v,ii) => `<span onclick="if('${v}'.startsWith('+')) { ar.push('${v}'.replace('+','')); }; tit.innerHTML += '${v.split(/,/)[0]} '; inp.focus(); this.onclick = null" class='${ v.startsWith("+") ? "tag tag2" : "tag"}' style="color: #${v.split('').reduce((r,v)=>(r+v.charCodeAt())%16777215,0).toString(16)}; animation: cubic-bezier(0.25,1, 0.5,1) fadeIn ${0.5+(ii*0.5)}s;">${v.replace('+','')}</span>`).join("<br>")
 })
 
 
